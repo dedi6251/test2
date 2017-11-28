@@ -1,0 +1,67 @@
+<marquee>WELCOME</marquee>
+<font color=”#00F″>
+<section>
+  <div class="page-header">
+    <h1 ng-bind="vm.article.title"></h1>
+  </div>
+  <div class="pull-right">
+    <a ng-show="vm.article._id" class="btn btn-primary" ng-click="vm.remove()">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <div class="col-md-12">
+    <form name="vm.form.articleForm" class="form-horizontal" ng-submit="vm.save(vm.form.articleForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="title">Title</label>
+          <input name="title" type="text" ng-model="vm.article.title" id="title" class="form-control" placeholder="Title" required autofocus>
+          <div ng-messages="vm.form.articleForm.title.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Article title is required.</p>
+          </div>
+        </div>
+		<div class="form-group" show-errors>
+          <label class="control-label" for="title">Nama Pasien</label>
+          <input name="title" type="text" ng-model="vm.article.namaPasien" id="title" class="form-control" placeholder="Title" required autofocus>
+          <div ng-messages="vm.form.articleForm.title.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Article title is required.</p>
+          </div>
+		<div class="form-group" show-errors>
+          <label class="control-label" for="title">Alamat Pasien</label>
+          <input name="title" type="text" ng-model="vm.article.alamatPasien" id="title" class="form-control" placeholder="Title" required autofocus>
+          <div ng-messages="vm.form.articleForm.title.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Article title is required.</p>
+          </div>
+		<div class="form-group" show-errors>
+          <label class="control-label" for="title">keluhan Pasien</label>
+          <input name="title" type="text" ng-model="vm.article.keluhanPasien" id="title" class="form-control" placeholder="Title" required autofocus>
+          <div ng-messages="vm.form.articleForm.title.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Article title is required.</p>
+          </div>	
+		<div class="form-group" show-errors>
+          <label class="control-label" for="title">Resep Dokter</label>
+          <input name="title" type="text" ng-model="vm.article.resepDokter" id="title" class="form-control" placeholder="Title" required autofocus>
+          <div ng-messages="vm.form.articleForm.title.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Article title is required.</p>
+          </div>  
+        </div>
+  
+  <small>
+    <em class="text-muted">
+      Posted on
+      <span ng-bind="vm.article.created | date:'mediumDate'"></span>
+      by
+      <span ng-if="vm.article.user" ng-bind="vm.article.user.displayName"></span>
+      <span ng-if="!vm.article.user">Deleted User</span>
+    </em>
+  </small>
+  <p class="lead" ng-bind="vm.article.content"></p>
+</section>
+
+<button onclick="window.print()">PRINT</button>
+
+<html>
+<head><title></title></head>
+<body background="background.jpg">
+
+</body>
+</html>
